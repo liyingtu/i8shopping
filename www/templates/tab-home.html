@@ -1,0 +1,58 @@
+<!--cache-view是否缓存false不缓存，每次进入页面刷新-->
+<ion-view view-title="">
+  <ion-nav-title>
+    <div align-title="center" class="bar bar-header item-input-inset">
+      <button class="button button-clear icon ion-ios-barcode-outline" style="margin-left:-15px"></button>
+
+        <label class="item-input-wrapper" style="height: 30px;margin-left:10px">
+          <i class="icon ion-ios-search placeholder-icon" style="font-size:20px;"></i>
+          <a href="#/tab/search"  style="width:100%">
+            <input type="search" placeholder="搜索" disabled="disabled">
+          </a>
+        </label>
+
+      <button class="button button-clear icon ion-ios-telephone-outline" style="margin-right:-15px"></button>
+    </div>
+  </ion-nav-title>
+
+  <!--overflow-scroll="false" scrollbar-y="false"隐藏滚动条-->
+  <ion-content overflow-scroll="false" scrollbar-y="false">
+    <div  class="home-slide">
+      <ion-slide-box does-continue="true" delegate-handle="home-slide" auto-play="true"
+                     show-pager="true" slide-interval="2000">
+        <ion-slide ng-repeat="slide in banner" style="width:100%;" on-slide-changed="slideHasChanged($index)">
+          <div class="box">
+            <img ng-src="{{slide}}" style="height:100%;width:100%;position: relative;">
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+
+    <!--
+      网格显示图片，换行，列无间距
+    -->
+    <div class="row row-wrap row-no-padding" style="border-style: groove">
+      <div class="col col-50 border" ng-repeat="slide in banner">
+        <a class="col-demo" href="#" style="text-decoration:none ">
+          <img ng-src= "{{slide}}" class="img-responsive"  style="height:100%;width:100%;"/>
+          <span class="text2colhidden" style="margin-left:6px;font-size:13px;color:#1d0e01;">
+            一二三四五六七八九十一二三四五六七八九十一二三四五</span>
+          <span style="margin-left:6px;font-size:15px;font-weight:bold;color:red">￥567</span>
+          <span style="float:right;margin-right:6px;font-size:10px;font-weight:bold;color:rgba(0, 0, 0, 0.25)">0人付款</span>
+        </a>
+      </div>
+      <div class="col col-50 border" ng-repeat="slide in banner">
+        <a class="col-demo" href="#" style="text-decoration:none ">
+          <img ng-src= "{{slide}}" class="img-responsive"  style="height:100%;width:100%;"/>
+          <span class="text2colhidden" style="margin-left:6px;font-size:13px;color:#1d0e01;">
+            一二三四五六七八九十一二三四五六七八九十一二三四五</span>
+          <span style="margin-left:6px;font-size:15px;font-weight:bold;color:red">￥567</span>
+          <span style="float:right;margin-right:6px;font-size:10px;font-weight:bold;color:rgba(0, 0, 0, 0.25)">0人付款</span>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>
+
+
