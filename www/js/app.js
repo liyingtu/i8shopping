@@ -13,6 +13,23 @@ define([
 // 'starter.controllers' is found in controllers.js
 var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services']);
 
+  app.directive('hideTabs', function($rootScope) {
+    return {
+      restrict: 'A',
+      link: function(scope, element, attributes) {
+        scope.$on('$ionicView.beforeEnter', function() {
+          scope.$watch(attributes.hideTabs, function(value){
+            $rootScope.hideTabs = value;
+          });
+        });
+
+        scope.$on('$ionicView.beforeLeave', function() {
+          $rootScope.hideTabs = false;
+        });
+      }
+    };
+  });
+
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
 

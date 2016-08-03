@@ -1,7 +1,10 @@
 /* Empty. Add your own CSS if you like */
 /*tabs 颜色字体*/
 .tabs {
-  color: #00a8ff; !important;}
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  color: #00a8ff; !important;
+}
 
 .tabs .tab-title{
   font-family:"微软雅黑" !important;
